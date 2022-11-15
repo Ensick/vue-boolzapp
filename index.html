@@ -66,7 +66,6 @@
                <!-- CONTACTS -->
 
                <div class="section-contacts">
-
                     <div class="cont-contacts" v-for="(elem,index) in contacts">
                         <div class="contacts-name">
                             <img :src="elem.avatar" alt="img">
@@ -81,13 +80,56 @@
                             <span>12:00</span>
                         </div>
                     </div>
-
                </div>
                 
 
             </div>
 
             <div class="section-right">
+
+                <!-- USER-RIGHT -->
+                <div>
+                    <div class="cont-user-avatar-right">
+
+                        <div class="cont-avatar-right">
+                            <img src="./assets/img/avatar_io.jpg" alt="img">
+                            <div>   
+                                <h4>Sofia</h4>
+                                <span>Ultimo accesso oggi alle 12:00</span>
+                            </div> 
+                        </div>     
+                        
+                        
+                        <div class="cont-icons-right">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-paperclip"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+    
+                    </div>
+                </div>
+
+                <!-- SEZIONE-CHAT -->
+                <div class="cont-chat">
+
+                </div>
+
+               <!--  SEZIONE-SCRITTURA -->
+                <div class="cont-text-message">
+
+                    <div class="cont-emoticon">
+                        <i class="fa-regular fa-face-smile"></i>
+                    </div>
+
+                    <div class="write-message">
+                        <input class="text-bar" type="text">
+                    </div>
+
+                    <div class="cont-audio-message">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
+                    
+                </div>
 
             </div>
 
