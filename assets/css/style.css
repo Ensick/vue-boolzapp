@@ -1,14 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 img{
 
     border-radius: 50%;
     width: 45px;
+}
+
+a{
+
+    color: inherit;
 }
 
 #root{
@@ -24,7 +31,7 @@ img{
     width: 90%;
     margin-inline: auto;
     height: 90%;
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgba(250, 250, 250, 1);
     border: 2px solid black;
     display: flex;
 }
@@ -34,12 +41,6 @@ img{
 .section-left{
 
     width: 35%;
-}
-
-.section-right{
-
-    border-left: 2px solid black;
-    width: 65%;
 }
 
 .cont-user-avatar-left{
@@ -68,4 +69,73 @@ img{
     color: rgba(177, 177, 177, 1);
 }
 
-/* SECTION-LEFT */
+/* NOTIFICATION */
+
+.notification{
+
+    display: flex;
+    align-items: center;
+    background-color: rgba(142, 218, 252, 1);
+    padding: 10px 20px;
+}
+
+.notification div:first-child{
+
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notification div:last-child > h4{
+
+    padding-bottom: 5px;
+}
+
+.notification div > i {
+
+    color: rgba(142, 218, 252, 1) ;
+}
+
+/* SEARCH-BAR */
+
+.cont-search-bar{
+
+    padding: 10px 5px;
+}
+
+.cont-search-bar div{
+    
+    border-radius: 5px;
+    border: 1px solid rgba(182, 185, 187, 1);
+    padding: 2px 4px;
+    background-color: white;
+}
+
+.cont-search-bar div > i{
+
+    color: rgba(182, 185, 187, 1);
+    font-size: 0.8rem;
+}
+
+.search-bar{
+
+    width: 90%;
+    border: none;
+    outline: none;
+}
+
+
+
+/* SECTION-LEFT-END */
+
+
+.section-right{
+
+    border-left: 2px solid black;
+    width: 65%;
+}
