@@ -10,7 +10,7 @@
 img{
 
     border-radius: 50%;
-    width: 45px;
+    width: 50px;
 }
 
 a{
@@ -41,6 +41,8 @@ a{
 .section-left{
 
     width: 35%;
+    display: flex;
+    flex-direction: column;
 }
 
 .cont-user-avatar-left{
@@ -120,6 +122,7 @@ a{
 
     color: rgba(182, 185, 187, 1);
     font-size: 0.8rem;
+    padding-right: 5px;
 }
 
 .search-bar{
@@ -128,6 +131,37 @@ a{
     border: none;
     outline: none;
 }
+
+/* CONTACTS */
+
+.section-contacts{
+
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.cont-contacts{
+
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.contacts-name{
+
+    display: flex;
+}
+
+.contacts-name div{
+
+    padding-inline-start: 15px;
+}
+
+.contacts-name div > span{
+
+    font-size: 0.7rem;
+}
+
 
 
 
