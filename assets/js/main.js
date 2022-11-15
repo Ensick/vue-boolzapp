@@ -5,6 +5,8 @@ var app = new Vue({
 
     data: {
 
+        activeContact: 0,
+
         contacts: [
             {
                 name: 'Michele',
@@ -174,6 +176,9 @@ var app = new Vue({
 
     methods: {
 
+        selezioneContatto(index){
 
+            this.activeContact = index
+        }
     },
 })

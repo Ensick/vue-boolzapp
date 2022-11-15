@@ -66,7 +66,8 @@
                <!-- CONTACTS -->
 
                <div class="section-contacts">
-                    <div class="cont-contacts" v-for="(elem,index) in contacts">
+
+                    <div @click="selezioneContatto(index)" class="cont-contacts" v-for="(elem,index) in contacts">
                         <div class="contacts-name">
                             <img :src="elem.avatar" alt="img">
 
@@ -80,6 +81,7 @@
                             <span>12:00</span>
                         </div>
                     </div>
+
                </div>
                 
 
@@ -92,9 +94,9 @@
                     <div class="cont-user-avatar-right">
 
                         <div class="cont-avatar-right">
-                            <img src="./assets/img/avatar_io.jpg" alt="img">
+                            <img :src="contacts[activeContact].avatar" alt="img">
                             <div>   
-                                <h4>Sofia</h4>
+                                <h4>{{contacts[activeContact].name}}</h4>
                                 <span>Ultimo accesso oggi alle 12:00</span>
                             </div> 
                         </div>     
@@ -112,6 +114,16 @@
                 <!-- SEZIONE-CHAT -->
                 <div class="cont-chat">
 
+                    <div class="flex-message">
+
+                        <div class="message-box" :class="(elem.status == 'sent') ? 'bg-green' : 'bg-white' " v-for="(elem,index) in contacts[activeContact].messages ">
+                            <span >{{elem.message}}</span>
+                        </div>
+
+                    </div>
+                   
+
+
                 </div>
 
                <!--  SEZIONE-SCRITTURA -->
@@ -122,7 +134,7 @@
                     </div>
 
                     <div class="write-message">
-                        <input class="text-bar" type="text">
+                        <input class="text-bar" type="text" placeholder="Scrivi un messaggio">
                     </div>
 
                     <div class="cont-audio-message">
