@@ -5,7 +5,7 @@ var app = new Vue({
 
     data: {
 
-        inputMessage:'',
+        inputMessage: '',
 
         activeContact: 0,
 
@@ -176,25 +176,30 @@ var app = new Vue({
 
     },
 
-    created(){
+    created() {
 
-      
+
     },
 
     methods: {
 
-        selezioneContatto(index){
+        selezioneContatto(index) {
 
             this.activeContact = index
         },
 
-        scriviMessaggio(){
+        scriviMessaggio() {
 
-            if(this.inputMessage !== ''){
+            if (this.inputMessage !== '') {
+
+                let data = new Date();
+                let dataAttuale = data.getDate() + '/' + data.getMonth() + '/' + data.getFullYear();
+                let oraAttuale = data.getHours() + ':' + data.getMinutes();
+                console.log(dataAttuale + ' ' + oraAttuale);
 
                 let newMessage = {
 
-                    date: '10/01/2020 15:51:00',
+                    date: `${oraAttuale}`,
                     message: this.inputMessage,
                     status: 'sent'
                 }
@@ -204,6 +209,36 @@ var app = new Vue({
 
             this.inputMessage = '';
 
+            setTimeout(()=>{
+
+                this.messaggioRicevuto()
+
+            },1000)
+
         },
+
+        messaggioRicevuto(){
+
+            let data = new Date();
+            let dataAttuale = data.getDate() + '/' + data.getMonth() + '/' + data.getFullYear();
+            let oraAttuale = data.getHours() + ':' + data.getMinutes();
+            console.log(dataAttuale + ' ' + oraAttuale);
+
+            let ricevedMessage = {
+
+                date: `${oraAttuale}`,
+                message: 'Ok!',
+                status: 'recived'
+            }
+
+            this.contacts[this.activeContact].messages.push(ricevedMessage);
+            this.inputMessage = '';
+         }
+
+           
+
+       
+
+
     },
 })
