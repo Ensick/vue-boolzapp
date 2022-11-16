@@ -5,6 +5,8 @@ var app = new Vue({
 
     data: {
 
+        ricercaUtente: '',
+
         inputMessage: '',
 
         activeContact: 0,
@@ -176,8 +178,19 @@ var app = new Vue({
 
     },
 
-    created() {
+    beforeUpdate() {
 
+        this.contacts.forEach((element, index ) => {
+            
+            if(this.contacts[index].name.includes(this.ricercaUtente) || this.ricercaUtente == '') {
+
+                element.visible = true
+
+            }else{
+
+                element.visible = false
+            }
+        });
 
     },
 
@@ -233,12 +246,7 @@ var app = new Vue({
 
             this.contacts[this.activeContact].messages.push(ricevedMessage);
             this.inputMessage = '';
-         }
-
-           
-
-       
-
+        },
 
     },
 })
