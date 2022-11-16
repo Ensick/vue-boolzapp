@@ -209,26 +209,22 @@ a{
     display: flex;
     flex-direction: column;
     max-width: 30%;
-    width: fit-content;
+    min-width: 10%;
     padding: 10px 15px;
     border-radius: 10px;
     margin-bottom: 10px;
 }
 
-.message-date-sent{
+.message-date{
 
     padding-top: 5px;
+    font-size: 0.5rem;
+}
+
+.align-self-end{
+
     align-self: flex-end;
-    font-size: 0.5rem;
 }
-
-.message-date-recived{
-
-    padding-top: 5px;
-    align-self: flex-start;
-    font-size: 0.5rem;
-}
-
 
 /* SEZIONE-SCRITTURA */
 

@@ -117,8 +117,8 @@
                     <div class="flex-message">
 
                         <div class="message-box" :class="(elem.status == 'sent') ? 'bg-green' : 'bg-white' " v-for="(elem,index) in contacts[activeContact].messages ">
-                            <span class="message-content">{{elem.message}}</span>
-                            <span :class="(elem.status == 'sent') ? 'message-date-sent' : 'message-date-recived' " >{{elem.date}}</span>
+                            <span>{{elem.message}}</span>
+                            <span class="message-date" :class="(elem.status == 'sent') ? '' : 'align-self-end' ">{{scomposizioneData(elem.date)}}</span>
                         </div>
 
                     </div>

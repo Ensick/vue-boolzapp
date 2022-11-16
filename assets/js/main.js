@@ -196,6 +196,17 @@ var app = new Vue({
 
     methods: {
 
+        scomposizioneData(dataScomposta){
+
+            dataScomposta = dataScomposta.split(' ');
+
+            dataScomposta = dataScomposta[1].split(':');
+
+            dataScomposta = `${dataScomposta[0]}:${dataScomposta[1]}`
+
+            return dataScomposta
+        },
+
         selezioneContatto(index) {
 
             this.activeContact = index
@@ -205,46 +216,44 @@ var app = new Vue({
 
             if (this.inputMessage !== '') {
 
-                let data = new Date();
-                let dataAttuale = data.getDate() + '/' + data.getMonth() + '/' + data.getFullYear();
-                let oraAttuale = data.getHours() + ':' + data.getMinutes();
-                console.log(dataAttuale + ' ' + oraAttuale);
+                let data = new Date().toLocaleDateString('it-EU');
+
+                let ora = new Date().toLocaleTimeString('it-EU')
 
                 let newMessage = {
 
-                    date: `${oraAttuale}`,
+                    date: `${data} ${ora}`,
                     message: this.inputMessage,
                     status: 'sent'
                 }
 
                 this.contacts[this.activeContact].messages.push(newMessage);
+
+                this.inputMessage = '';
+
+                setTimeout(()=>{
+
+                    this.messaggioRicevuto()
+
+                },1000)
             }
-
-            this.inputMessage = '';
-
-            setTimeout(()=>{
-
-                this.messaggioRicevuto()
-
-            },1000)
 
         },
 
         messaggioRicevuto(){
 
-            let data = new Date();
-            let dataAttuale = data.getDate() + '/' + data.getMonth() + '/' + data.getFullYear();
-            let oraAttuale = data.getHours() + ':' + data.getMinutes();
-            console.log(dataAttuale + ' ' + oraAttuale);
+            let data = new Date().toLocaleDateString('it-EU');
 
-            let ricevedMessage = {
+            let ora = new Date().toLocaleTimeString('it-EU')
 
-                date: `${oraAttuale}`,
+            let receivedMessage = {
+
+                date: `${data} ${ora}`,
                 message: 'Ok!',
-                status: 'recived'
+                status: 'received'
             }
 
-            this.contacts[this.activeContact].messages.push(ricevedMessage);
+            this.contacts[this.activeContact].messages.push(receivedMessage);
             this.inputMessage = '';
         },
 
