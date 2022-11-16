@@ -206,9 +206,11 @@ a{
 
 .message-box{
 
-    width: 30%;
+    max-width: 30%;
+    width: fit-content;
     padding: 10px 15px;
     border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 /* SEZIONE-SCRITTURA */

@@ -5,6 +5,8 @@ var app = new Vue({
 
     data: {
 
+        inputMessage:'',
+
         activeContact: 0,
 
         contacts: [
@@ -174,11 +176,34 @@ var app = new Vue({
 
     },
 
+    created(){
+
+      
+    },
+
     methods: {
 
         selezioneContatto(index){
 
             this.activeContact = index
-        }
+        },
+
+        scriviMessaggio(){
+
+            if(this.inputMessage !== ''){
+
+                let newMessage = {
+
+                    date: '10/01/2020 15:51:00',
+                    message: this.inputMessage,
+                    status: 'sent'
+                }
+
+                this.contacts[this.activeContact].messages.push(newMessage);
+            }
+
+            this.inputMessage = '';
+
+        },
     },
 })

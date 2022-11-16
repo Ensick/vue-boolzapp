@@ -118,6 +118,7 @@
 
                         <div class="message-box" :class="(elem.status == 'sent') ? 'bg-green' : 'bg-white' " v-for="(elem,index) in contacts[activeContact].messages ">
                             <span >{{elem.message}}</span>
+                            <span>{{elem.date}}</span>
                         </div>
 
                     </div>
@@ -134,7 +135,7 @@
                     </div>
 
                     <div class="write-message">
-                        <input class="text-bar" type="text" placeholder="Scrivi un messaggio">
+                        <input class="text-bar" type="text" placeholder="Scrivi un messaggio" @keyup.enter="scriviMessaggio()" v-model="inputMessage">
                     </div>
 
                     <div class="cont-audio-message">
@@ -150,7 +151,7 @@
     </div>
     
 
-
+    
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script type="text/javascript" src="./assets/js/main.js" ></script>
 </body>
