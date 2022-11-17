@@ -5,6 +5,8 @@ var app = new Vue({
 
     data: {
 
+        attivazioneDropDown: false,
+
         ricercaUtente: '',
 
         inputMessage: '',
@@ -256,6 +258,20 @@ var app = new Vue({
             this.contacts[this.activeContact].messages.push(receivedMessage);
             this.inputMessage = '';
         },
+
+        dropDown(index){
+
+            console.log(index)
+            
+            if(this.attivazioneDropDown == false){
+
+                this.attivazioneDropDown = true
+
+            }else{
+
+                this.attivazioneDropDown = false
+            }
+        }
 
     },
 })

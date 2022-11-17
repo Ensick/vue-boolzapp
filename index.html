@@ -117,7 +117,14 @@
                     <div class="flex-message">
 
                         <div class="message-box" :class="(elem.status == 'sent') ? 'bg-green' : 'bg-white' " v-for="(elem,index) in contacts[activeContact].messages ">
-                            <span>{{elem.message}}</span>
+                            <div class="cont-message-arrow">
+                                <span class="">{{elem.message}}</span>
+                                <i @click="dropDown( index )" class="fa-solid fa-chevron-down"></i>
+                                <ul class="cont-ul" v-show="attivazioneDropDown == true">
+                                    <li>Message Info</li>
+                                    <li>Delete Message</li>
+                                </ul>
+                            </div>
                             <span class="message-date" :class="(elem.status == 'sent') ? '' : 'align-self-end' ">{{scomposizioneData(elem.date)}}</span>
                         </div>
 

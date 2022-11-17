@@ -18,6 +18,11 @@ a{
     color: inherit;
 }
 
+li{
+
+    list-style-type: none;
+}
+
 #root{
 
     height: 100vh;
@@ -224,6 +229,38 @@ a{
 .align-self-end{
 
     align-self: flex-end;
+}
+
+.cont-message-arrow{
+
+    display: flex;
+    position: relative;
+}
+
+.cont-message-arrow > i{
+
+    font-size: 0.8rem;
+    padding-left: 10px;
+    align-self: center;
+}
+
+.cont-ul{
+
+    min-width: 122px;
+    font-size: 0.8rem;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.cont-ul li:first-child{
+
+    padding-bottom: 5px;
+    margin-bottom: 3px;
+    border-bottom: 1px solid lightgray;
 }
 
 /* SEZIONE-SCRITTURA */
